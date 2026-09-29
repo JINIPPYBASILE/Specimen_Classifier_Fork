@@ -153,7 +153,7 @@ Place your own image data under `Data/` following the [structure above](#data-fo
 
 ### 1. Split a category folder into training/testing
 
-If your images are sorted into one flat folder per category (e.g. `Data/Collection/Carabidae/`, `Data/Collection/Chrysomelidae/`, ...) rather than already split into `training/`/`testing/`, open [`Code/Split_Dataset.ipynb`](Code/Split_Dataset.ipynb) and run it top to bottom. It walks you through picking that source folder, picking an output folder, and choosing a training/testing percentage split (80/20 by default) — no coding required, just two folder-picker pop-ups and one number to edit. It copies images (your originals are left untouched) into the same `training/`/`testing/` layout the other notebooks expect.
+If your images are sorted into one flat folder per category (e.g. `Data/Collection/Carabidae/`, `Data/Collection/Chrysomelidae/`, ...) rather than already split into `training/`/`testing/`, open [`Code/Split_Dataset.ipynb`](Code/Split_Dataset.ipynb), fill in its Step 1 settings (a name for the new dataset and a training percentage, 80/20 by default), and choose **Run All** — no coding required. A folder-picker pop-up asks for the source folder, the notebook previews how many images of each category go to training and testing, then randomly splits each category and copies the images (your originals are left untouched) into `Data/<dataset name>/training/<category>/` and `Data/<dataset name>/testing/<category>/`, the layout the other notebooks expect. The split is reproducible via a random seed, and it refuses to overwrite an existing dataset folder.
 
 ### 2. Train a model
 
