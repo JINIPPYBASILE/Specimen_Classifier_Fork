@@ -7,7 +7,25 @@ pandas
 matplotlib
 scikit-learn
 Pillow
+opencv-python   # Watershed_Segment_Image.ipynb
 
 # numpy, pandas, matplotlib, scikit-learn, and Pillow all ship with the default
-# Anaconda installer. The only package you need to install yourself is tensorflow:
-#   pip install tensorflow
+# Anaconda installer. The only packages you need to install yourself are tensorflow
+# and opencv-python:
+#   pip install tensorflow opencv-python
+#
+# Segment_Specimens.ipynb (Grounding DINO + SAM) also needs PyTorch, Hugging Face
+# transformers, and scipy. They install into the same environment as tensorflow
+# (tested together with torch 2.14.0 and transformers 5.17.0):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install transformers scipy
+# With an NVIDIA GPU, install torch from https://pytorch.org instead of the
+# CPU-only index above.
+#
+# Full setup from scratch with Miniconda (conda-forge avoids Anaconda's channel
+# terms-of-service prompt):
+#   conda create -n specimen python=3.12 -c conda-forge --override-channels
+#   conda activate specimen
+#   pip install tensorflow==2.21.0 numpy pandas matplotlib scikit-learn Pillow opencv-python ipykernel
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install transformers scipy
